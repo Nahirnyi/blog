@@ -39,6 +39,8 @@ class PostsController extends Controller
 
         auth()->user()->publish(new Post(request(['title', 'body'])));
 
+        session()->flash('message', 'Your message has been published');
+
         return redirect('/');
     }
 }

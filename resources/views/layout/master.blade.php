@@ -21,7 +21,11 @@
 <body>
 
 @include('layout.nav')
-
+    @if($flash = session('message'))
+        <div style="position: absolute; right: 20px; bottom: 10px; z-index: 10;" class="alert alert-success" role="alert">
+            {{ $flash }}
+        </div>
+    @endif
 
 
 <div class="container">
